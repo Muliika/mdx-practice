@@ -1,7 +1,20 @@
-import Image from "next/image";
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import Link from 'next/link'
 
-export default function Home() {
+
+
+export default async function Home() {
+  
+  
   return (
-    <div>Starter environment</div>
-  );
+    <div style={{ padding: '20px' }}>
+      <h1>Welcome to My Site</h1>
+      <p>This is my personal website built with Nextra and Next.js!</p>
+      
+      
+    
+    </div>
+  )
 }
