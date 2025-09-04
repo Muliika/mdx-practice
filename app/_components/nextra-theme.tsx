@@ -20,3 +20,6 @@ export const NextraTheme: FC<{
     </>
   )
 }
+
+// add categories
+// add tags
