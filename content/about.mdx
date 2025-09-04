@@ -1,0 +1,62 @@
+---
+title: "About Us"
+description: "Learn more about our team and mission"
+---
+
+import { TeamMember } from '../app/_components/TeamMember'
+import { ContactCard } from '../app/_components/ContactCard'
+import { StatsCard } from '../app/_components/StatsCard'
+
+# About Us
+
+Welcome to our documentation platform! We're passionate about creating clear, comprehensive, and accessible documentation for developers worldwide.
+
+## Our Impact
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+  <StatsCard number="10,000+" label="Developers Helped" />
+  <StatsCard number="500+" label="Tutorials Published" />
+  <StatsCard number="50+" label="Open Source Projects" />
+</div>
+
+## Meet Our Team
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+  <TeamMember 
+    name="John Doe"
+    role="Lead Technical Writer"
+    image="/team/john.jpg"
+    bio="John has over 8 years of experience in technical writing and developer advocacy."
+    social={{
+      twitter: "https://twitter.com/johndoe",
+      github: "https://github.com/johndoe",
+      linkedin: "https://linkedin.com/in/johndoe"
+    }}
+  />
+  
+  <TeamMember 
+    name="Jane Smith"
+    role="Senior Developer"
+    image="/team/jane.jpg"
+    bio="Jane is a full-stack developer with expertise in React, Node.js, and modern web technologies."
+    social={{
+      twitter: "https://twitter.com/janesmith",
+      github: "https://github.com/janesmith"
+    }}
+  />
+  
+  <TeamMember 
+    name="Mike Johnson"
+    role="UX Designer"
+    image="/team/mike.jpg"
+    bio="Mike focuses on creating intuitive user experiences for our documentation platform."
+    social={{
+      twitter: "https://twitter.com/mikejohnson",
+      dribbble: "https://dribbble.com/mikejohnson"
+    }}
+  />
+</div>
+
+## Get in Touch
+
+<ContactCard />
