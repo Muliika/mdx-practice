@@ -10,5 +10,9 @@ export default {
   blog: {
     title: 'Blog',
     type: 'page'
+  },
+  categories: {
+    title: 'Categories',
+    type: 'page'
   }
 }
