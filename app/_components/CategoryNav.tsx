@@ -5,7 +5,11 @@ export async function CategoryNav() {
   const categories = await getCategoryStats()
 
   if (categories.length === 0) {
-    return null
+    return (
+      <div className="mb-8">
+        <p className="text-gray-500 dark:text-gray-400">No categories available yet.</p>
+      </div>
+    )
   }
 
   return (
@@ -14,25 +18,22 @@ export async function CategoryNav() {
         Browse by Category
       </h3>
       <div className="flex flex-wrap gap-3">
+        {/* All Posts Link */}
         <Link
           href="/blog"
-          className="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 transition-colors"
+          className="px-4 py-2 text-sm font-medium rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors duration-200"
         >
           All Posts
-          <span className="ml-2 text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded-full">
-            {categories.reduce((total, cat) => total + cat.count, 0)}
-          </span>
         </Link>
+        
+        {/* Category Links */}
         {categories.map((category) => (
           <Link
             key={category.slug}
             href={`/blog/category/${category.slug}`}
-            className="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-200 dark:hover:bg-blue-800 transition-colors"
+            className="px-4 py-2 text-sm font-medium rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-200 dark:hover:bg-blue-800 transition-colors duration-200 hover:shadow-sm"
           >
-            {category.name}
-            <span className="ml-2 text-xs bg-blue-200 dark:bg-blue-800 px-2 py-0.5 rounded-full">
-              {category.count}
-            </span>
+            {category.name} ({category.count})
           </Link>
         ))}
       </div>
